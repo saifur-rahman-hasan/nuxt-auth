@@ -1,4 +1,5 @@
-# soluta-front
+# Nuxt Auth Boilerplate
+Implemented Nuxt Js Authentication & Authorization feature.
 
 ## Build Setup
 
