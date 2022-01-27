@@ -3,6 +3,7 @@ import themeConfig from './config/themeConfig'
 import authConfig from './config/authConfig'
 import axiosConfig from './config/axiosConfig'
 import buildConfig from './config/buildConfig'
+import routerConfig from './config/routerConfig'
 
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
@@ -42,5 +43,8 @@ export default {
     build: buildConfig,
 
     // Auth Module Config
-    auth: authConfig
+    auth: authConfig,
+
+    // Router Config
+    router: routerConfig
 }
