@@ -5,17 +5,12 @@
             justify="center">
             <v-col cols='12' lg='3'>
 
-                <div class='text-center mb-5'>
-                    <NuxtLogo classes='brand-logo'></NuxtLogo>
-                    <h2>Nuxt Auth</h2>
-                </div>
+                <BrandLogo class='text-center mb-8' />
 
                 <v-form :disabled='form.loading' @submit.prevent='userLogin'>
                     <v-card flat>
-                        <!-- Alerts -->
-                        <v-card-text class='pb-0'>
-                            <v-alert type="error" dismissible>Alert Error</v-alert>
-                        </v-card-text>
+                        <v-card-title>Account Login</v-card-title>
+                        <v-card-subtitle>Get access to your account.</v-card-subtitle>
 
                         <v-card-text>
 
@@ -25,7 +20,6 @@
                                 :rules='form.rules.email'
                                 label='Email'
                                 outlined
-                                hint='You can use email, mobile or username'
                             ></v-text-field>
 
                             <!-- Field: Password -->
@@ -114,7 +108,4 @@ export default {
 </script>
 
 <style scoped>
-.brand-logo {
-    height: 40px;
-}
 </style>
