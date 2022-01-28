@@ -1,10 +1,10 @@
 <template>
-    <h1>Login Page !</h1>
+    <h1>Forgot Password Page</h1>
 </template>
 
 <script>
 export default {
-    name: 'AuthLogin',
+    name: 'AuthForgotPassword',
     auth: 'guest'
 }
 </script>

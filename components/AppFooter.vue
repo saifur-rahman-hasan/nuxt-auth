@@ -19,7 +19,8 @@ export default {
         },
         brandName: {
             type: String,
-            required: true
+            required: true,
+            default: 'Brand Name'
         }
     }
 }

@@ -2,15 +2,13 @@
     <v-app dark>
         <v-main>
             <v-container fill-height fluid>
-                <v-row
-                    align="center"
-                    justify="center">
+                <v-layout align-center justify-center>
                     <Nuxt />
-                </v-row>
+                </v-layout>
             </v-container>
         </v-main>
 
-        <AppFooter :fixed='fixed' :brand-name='title' />
+        <AppFooter :fixed='fixed' :brand-name='brandName'/>
     </v-app>
 </template>
 
@@ -22,7 +20,7 @@ export default {
     data() {
         return {
             fixed: false,
-            title: appConfig.app.name,
+            brandName: appConfig.app.name,
         }
     },
 }
