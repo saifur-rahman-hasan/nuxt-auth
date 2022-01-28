@@ -1,7 +1,12 @@
+const APP_NAME = "Nuxt Auth"
+
 export default {
+    app: {
+        name: APP_NAME
+    },
     head: {
-        titleTemplate: '%s - Nuxt Auth',
-        title: 'Nuxt Auth',
+        titleTemplate: `%s - ${APP_NAME}`,
+        title: APP_NAME,
         htmlAttrs: {
             lang: 'en',
         },
@@ -11,6 +16,8 @@ export default {
             { hid: 'description', name: 'description', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        ],
     }
 }

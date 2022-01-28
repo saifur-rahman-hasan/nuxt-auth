@@ -6,6 +6,8 @@ import buildConfig from './config/buildConfig'
 import routerConfig from './config/routerConfig'
 
 export default {
+    loading: { color: 'blue', height: '5px' },
+
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: appConfig.head,
 
