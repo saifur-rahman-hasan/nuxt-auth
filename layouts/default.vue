@@ -1,11 +1,7 @@
 <template>
     <v-app dark>
         <v-main>
-            <v-container fill-height fluid>
-                <v-layout align-center justify-center>
-                    <Nuxt />
-                </v-layout>
-            </v-container>
+            <Nuxt />
         </v-main>
 
         <AppFooter :fixed='fixed' :brand-name='brandName'/>

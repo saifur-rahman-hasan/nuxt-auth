@@ -1,14 +1,120 @@
 <template>
-    <h1>Login Page !</h1>
+    <v-container fill-height fluid>
+        <v-row
+            align="center"
+            justify="center">
+            <v-col cols='12' lg='3'>
+
+                <div class='text-center mb-5'>
+                    <NuxtLogo classes='brand-logo'></NuxtLogo>
+                    <h2>Nuxt Auth</h2>
+                </div>
+
+                <v-form :disabled='form.loading' @submit.prevent='userLogin'>
+                    <v-card flat>
+                        <!-- Alerts -->
+                        <v-card-text class='pb-0'>
+                            <v-alert type="error" dismissible>Alert Error</v-alert>
+                        </v-card-text>
+
+                        <v-card-text>
+
+                            <!-- Field: Email -->
+                            <v-text-field
+                                v-model="form.data.email"
+                                :rules='form.rules.email'
+                                label='Email'
+                                outlined
+                                hint='You can use email, mobile or username'
+                            ></v-text-field>
+
+                            <!-- Field: Password -->
+                            <v-text-field
+                                v-model="form.data.password"
+                                :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                                :type="showPassword ? 'text' : 'password'"
+                                :rules='form.rules.password'
+                                label="Password"
+                                outlined
+                                @click:append="showPassword = !showPassword"
+                            ></v-text-field>
+
+                            <!-- Field: Remember -->
+                            <div class='d-flex justify-space-between'>
+                                <v-checkbox
+                                    v-model="form.data.remember"
+                                    label="Remember Me"
+                                    class='mt-0 pt-0'
+                                ></v-checkbox>
+
+                                <nuxt-link to='/auth/register'>Forgot Password?</nuxt-link>
+                            </div>
+
+                            <!-- Button: Submit -->
+                            <v-btn type='submit' block :disabled='form.loading' :loading='form.loading' large color='primary'>Login</v-btn>
+                        </v-card-text>
+
+                        <v-card-actions class='d-flex flex-column justify-center'>
+                            <div class='mb-3 text--disabled'>OR</div>
+                            <nuxt-link to='/auth/register'>Create new account</nuxt-link>
+                        </v-card-actions>
+                    </v-card>
+                </v-form>
+
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
 export default {
     name: 'AuthLogin',
-    auth: 'guest'
+    auth: 'guest',
+    data: () => {
+        return {
+            showPassword: false,
+            form: {
+                loading: false,
+                errors: {},
+                rules: {
+                    email: [
+                        value => !!value || 'This field is required.'
+                    ],
+                    password: [
+                        value => !!value || 'This field is required.'
+                    ]
+                },
+                data: {
+                    email: '',
+                    password: '',
+                    remember: false
+                },
+            },
+        }
+    },
+
+    methods: {
+        userLogin(){
+            this.loadingStart();
+
+            setTimeout(() => {
+                this.loadingStop()
+            }, 1500);
+        },
+
+        loadingStart() {
+            this.form.loading = true
+        },
+
+        loadingStop(){
+            this.form.loading = false
+        }
+    }
 }
 </script>
 
 <style scoped>
-
+.brand-logo {
+    height: 40px;
+}
 </style>
