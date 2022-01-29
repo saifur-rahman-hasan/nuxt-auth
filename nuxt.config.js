@@ -6,7 +6,7 @@ import buildConfig from './config/buildConfig'
 import routerConfig from './config/routerConfig'
 
 export default {
-	loading: { color: 'blue', height: '5px' },
+	loading: { color: '#ff5252', height: '3px' },
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: appConfig.head,
@@ -32,7 +32,7 @@ export default {
 	modules: [
 		// https://go.nuxtjs.dev/axios
 		'@nuxtjs/axios',
-		'@nuxtjs/auth-next'
+		'@nuxtjs/auth-next',
 	],
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -48,5 +48,5 @@ export default {
 	auth: authConfig,
 
 	// Router Config
-	router: routerConfig
+	router: routerConfig,
 }
