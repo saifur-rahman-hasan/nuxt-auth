@@ -5,6 +5,6 @@
 <script>
 export default {
 	name: 'InspirePage',
-	auth: false
+	layout: 'dashboard',
 }
 </script>
