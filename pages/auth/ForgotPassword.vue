@@ -1,11 +1,11 @@
 <template>
-    <h1>Forgot Password Page</h1>
+	<h1>Forgot Password Page</h1>
 </template>
 
 <script>
 export default {
-    name: 'AuthForgotPassword',
-    auth: 'guest'
+	name: 'AuthForgotPassword',
+	auth: 'guest'
 }
 </script>
 

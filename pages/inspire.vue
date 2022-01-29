@@ -1,10 +1,10 @@
 <template>
-    <h1>Inspire Page</h1>
+	<h1>Inspire Page</h1>
 </template>
 
 <script>
 export default {
-    name: 'InspirePage',
-    auth: false
+	name: 'InspirePage',
+	auth: false
 }
 </script>
