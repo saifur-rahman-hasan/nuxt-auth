@@ -138,10 +138,10 @@ export default {
 					],
 				},
 				data: {
-					name: 'Saifur Rahman',
-					email: 'saifur.dohs@gmail.com',
-					password: 'password',
-					password_confirmation: 'password',
+					name: '',
+					email: '',
+					password: '',
+					password_confirmation: '',
 				},
 			},
 		}
