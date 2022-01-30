@@ -113,13 +113,7 @@ export default {
 				.loginWith('laravelJWT', {
 					data: this.form.data,
 				})
-				.then((res) => {
-					// eslint-disable-next-line no-console
-					console.log(res.data)
-					this.loadingStop()
-				})
 				.catch((err) => {
-					// eslint-disable-next-line no-console
 					this.form.errors.record(err.response.data)
 					this.loadingStop()
 				})
