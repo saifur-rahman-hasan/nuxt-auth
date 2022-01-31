@@ -146,7 +146,11 @@ export default {
 			},
 		}
 	},
-
+	head: () => {
+		return {
+			title: 'Create new Account',
+		}
+	},
 	methods: {
 		userRegister() {
 			this.loadingStart()

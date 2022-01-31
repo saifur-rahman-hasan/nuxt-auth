@@ -104,6 +104,11 @@ export default {
 			},
 		}
 	},
+	head: () => {
+		return {
+			title: 'Log In',
+		}
+	},
 
 	methods: {
 		userLogin() {

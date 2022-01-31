@@ -26,13 +26,55 @@
 
 			<v-spacer />
 
-			<v-btn icon>
-				<v-icon>mdi-account</v-icon>
-			</v-btn>
+			<template v-if="$auth.loggedIn">
+				<v-toolbar-items>
+					<v-menu offset-y>
+						<template #activator="{ on, attrs }">
+							<v-btn
+								depressed
+								v-bind="attrs"
+								class="text-none"
+								v-on="on"
+							>
+								<v-avatar class="mr-4" size="40">
+									<img
+										src="https://cdn.vuetifyjs.com/images/john.jpg"
+										:alt="`${$auth.user.name}'s avatar`"
+									/>
+								</v-avatar>
 
-			<v-btn icon @click="$auth.logout()">
-				<v-icon>mdi-logout</v-icon>
-			</v-btn>
+								{{ $auth.user.name }}
+							</v-btn>
+						</template>
+						<v-list dense>
+							<v-list-item
+								v-for="(userLink, index) in userLinks"
+								:key="index"
+								link
+								class="align-center"
+							>
+								<v-list-item-action class="mr-3">
+									<v-icon>{{ userLink.icon }}</v-icon>
+								</v-list-item-action>
+								<v-list-item-content>
+									<v-list-item-title
+										v-text="userLink.title"
+									/>
+								</v-list-item-content>
+							</v-list-item>
+
+							<v-list-item link @click="$auth.logout()">
+								<v-list-item-action class="mr-3">
+									<v-icon>mdi-logout</v-icon>
+								</v-list-item-action>
+								<v-list-item-content>
+									<v-list-item-title v-text="'Logout'" />
+								</v-list-item-content>
+							</v-list-item>
+						</v-list>
+					</v-menu>
+				</v-toolbar-items>
+			</template>
 		</v-app-bar>
 
 		<v-main>
@@ -55,6 +97,18 @@ export default {
 			clipped: true,
 			drawer: false,
 			fixed: true,
+			userLinks: [
+				{
+					icon: 'mdi-account',
+					title: 'Profile',
+					to: '/',
+				},
+				{
+					icon: 'mdi-cog',
+					title: 'Settings',
+					to: '/',
+				},
+			],
 			links: [
 				{
 					icon: 'mdi-apps',

@@ -8,5 +8,10 @@
 export default {
 	name: 'IndexPage',
 	layout: 'dashboard',
+	head: () => {
+		return {
+			title: 'Welcome',
+		}
+	},
 }
 </script>
