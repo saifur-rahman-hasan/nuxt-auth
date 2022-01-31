@@ -33,8 +33,8 @@
 							<v-btn
 								depressed
 								v-bind="attrs"
-								v-on="on"
 								class="text-none"
+								v-on="on"
 							>
 								<v-avatar class="mr-4" size="40">
 									<img
@@ -100,12 +100,12 @@ export default {
 			userLinks: [
 				{
 					icon: 'mdi-account',
-					title: 'Account',
+					title: 'Profile',
 					to: '/',
 				},
 				{
 					icon: 'mdi-cog',
-					title: 'Account Settings',
+					title: 'Settings',
 					to: '/',
 				},
 			],
