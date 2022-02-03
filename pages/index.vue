@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<h1>Index Page</h1>
+		<h1 class="display-1 font-weight-light">
+			Welcome, {{ auth.user.name }}
+		</h1>
 	</div>
 </template>
 
@@ -12,6 +14,11 @@ export default {
 		return {
 			title: 'Welcome',
 		}
+	},
+	computed: {
+		auth() {
+			return this.$auth
+		},
 	},
 }
 </script>
