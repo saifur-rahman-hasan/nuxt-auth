@@ -3,17 +3,17 @@
 		<v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
 			<v-list>
 				<v-list-item
-					v-for="(link, i) in links"
-					:key="i"
-					:to="link.to"
+					v-for="(drawerLink, index) in drawerLinks"
+					:key="index"
+					:to="drawerLink.to"
 					router
 					exact
 				>
 					<v-list-item-action>
-						<v-icon>{{ link.icon }}</v-icon>
+						<v-icon>{{ drawerLink.icon }}</v-icon>
 					</v-list-item-action>
 					<v-list-item-content>
-						<v-list-item-title v-text="link.title" />
+						<v-list-item-title v-text="drawerLink.title" />
 					</v-list-item-content>
 				</v-list-item>
 			</v-list>
@@ -51,6 +51,7 @@
 								v-for="(userLink, index) in userLinks"
 								:key="index"
 								link
+								:to="userLink.to"
 								class="align-center"
 							>
 								<v-list-item-action class="mr-3">
@@ -101,7 +102,7 @@ export default {
 				{
 					icon: 'mdi-account',
 					title: 'Profile',
-					to: '/',
+					to: '/profile',
 				},
 				{
 					icon: 'mdi-cog',
@@ -109,7 +110,7 @@ export default {
 					to: '/',
 				},
 			],
-			links: [
+			drawerLinks: [
 				{
 					icon: 'mdi-apps',
 					title: 'Welcome',
@@ -117,8 +118,8 @@ export default {
 				},
 				{
 					icon: 'mdi-chart-bubble',
-					title: 'Inspire',
-					to: '/inspire',
+					title: 'Dashboard',
+					to: '/dashboard',
 				},
 			],
 			brandName: appConfig.app.name,
