@@ -1,3 +1,3 @@
 export default {
-	baseURL: 'http://lumen-jwt-auth.test/api',
+	baseURL: 'http://laravel-jwt-auth.test/api',
 }
