@@ -1,3 +1,5 @@
+const JWT_AUTH_BASE_URL = 'http://laravel-jwt-auth.test'
+
 export default {
 	redirect: {
 		login: '/auth/login',
@@ -9,7 +11,7 @@ export default {
 	strategies: {
 		laravelJWT: {
 			provider: 'laravel/jwt',
-			url: 'http://lumen-jwt-auth.test',
+			url: JWT_AUTH_BASE_URL,
 		},
 	},
 }
