@@ -22,6 +22,7 @@
 		<v-app-bar :clipped-left="clipped" fixed app>
 			<v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
+			<ToolbarBrandLogo class="mx-5" />
 			<v-toolbar-title v-text="brandName" />
 
 			<v-spacer />
