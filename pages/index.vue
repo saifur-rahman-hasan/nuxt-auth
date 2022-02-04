@@ -10,11 +10,9 @@
 export default {
 	name: 'IndexPage',
 	layout: 'dashboard',
-	head: () => {
-		return {
-			title: 'Welcome',
-		}
-	},
+	head: () => ({
+		title: 'Welcome',
+	}),
 	computed: {
 		auth() {
 			return this.$auth
